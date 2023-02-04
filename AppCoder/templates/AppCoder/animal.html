@@ -1,0 +1,28 @@
+{% extends "AppCoder/inicio.html"%}
+
+{% load static %}
+
+{% block herencia %}
+    
+    <h1>Lista de estudiantes.</h1>
+
+   {% if estudiantes %}
+
+        <ul>
+        {% for m in mascotas %}
+            <li>{{m}}</li>
+            <button>
+                <a href="{% url 'eliminarEstudiante' m.nombreEstudiante %}">Borrar| </a>
+                <a href="{% url 'editarEstudiante' m.nombreEstudiante %}">Actualizar</a>
+            </button>
+            <br>
+        {% endfor %}
+        </ul>
+        <p>
+            <a href="formularioEstudiante">Agregar</a>
+            
+        </p>
+    
+   {% endif %}
+
+{% endblock %}

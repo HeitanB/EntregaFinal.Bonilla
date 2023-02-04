@@ -1,0 +1,28 @@
+{% extends "AppCoder/inicio.html"%}
+
+{% load static %}
+
+{% block herencia %}
+
+
+    <h1>Listado de Tutores</h1>
+    
+    
+    <ul>   
+    {% for p in tutores %}
+        <li>{{p}}</li>
+        <button>
+            <a href="{% url 'eliminarTutor' p.nombre %}">Borrar| </a>
+            <a href="{% url 'editarTutor' p.nombre %}">Actualizar</a>
+        </button>
+        <br>
+    {% endfor %}      
+    </ul>    
+    <p>
+        <a href="formularioTutor">Agregar</a>
+        
+    </p>
+
+    
+
+{% endblock %}
